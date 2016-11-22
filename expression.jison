@@ -24,7 +24,7 @@
 
 expressions
     : e EOF
-        {console.log($$);}
+        {return $$;}
     ;
 
 e

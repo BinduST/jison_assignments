@@ -27,6 +27,10 @@ var restructure = function (list) {
     return replaceSymbolsFrom(JSONString);
 }
 
+var getAsValues = function (symbol) {
+    return isAnOperator(symbol) ? symbol : symbol.value;
+}
+
 var convertIntoWords = function (symbol) {
   return isAnOperator(symbol) ? operatorRep[symbol] : getWordRep(symbol.value);
 }
@@ -38,7 +42,7 @@ var convert = function (expression, list, convertForm) {
       if(symbol instanceof Tree)
         convert(symbol, list, convertForm);
       else {
-        var result = (convertForm == 'words') ? convertIntoWords(symbol) : symbol.value;
+        var result = (convertForm == 'words') ? convertIntoWords(symbol) : getAsValues(symbol);
         list.push(result);
       }
     }
@@ -47,4 +51,4 @@ var convert = function (expression, list, convertForm) {
 }
 
 var result = parser.parse("1*2+3");
-console.log(convert(result, [],'words'));
+console.log(convert(result, [], 'words'));

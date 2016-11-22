@@ -1,6 +1,6 @@
 "use strict"
 
-class Tree {
+class ParseTree {
   constructor(operand1,operator,operand2) {
     this.left = operand1;
     this.root = operator;
@@ -11,4 +11,4 @@ class Tree {
   }
 }
 
-module.exports = Tree;
+module.exports = ParseTree;
