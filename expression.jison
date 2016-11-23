@@ -11,7 +11,8 @@
 /lex
 
 %{
-  var Node = require(process.cwd() + "/Node.js");
+  var NumberNode = require(process.cwd() + "/NumberNode.js");
+  var OperatorNode = require(process.cwd() + "/OperatorNode.js");
   var ParseTree = require(process.cwd() + "/ParseTree.js");
 %}
 
@@ -29,11 +30,11 @@ expressions
 
 e
     : e '+' e
-        {$$ = new ParseTree($1,$2,$3);}
+        {$$ = new ParseTree($1,new OperatorNode($2),$3);}
 
     | e '*' e
-        {$$ = new ParseTree($1,$2,$3);}
+        {$$ = new ParseTree($1,new OperatorNode($2),$3);}
 
     | NUMBER
-        {$$ = new Node(yytext, 'number');}
+        {$$ = new NumberNode(yytext);}
     ;

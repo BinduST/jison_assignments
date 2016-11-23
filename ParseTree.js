@@ -7,7 +7,11 @@ class ParseTree {
     this.right = operand2;
   }
   evaluate() {
-    return this.left.value+''+this.root+''+this.right.value;
+    return ['(',this.left.evaluate(),this.root.evaluate(),this.right.evaluate(),')'].join('');
+  }
+
+  convertIntoWords() {
+    return ['(',this.left.convertIntoWords(),this.root.convertIntoWords(),this.right.convertIntoWords(),')'].join(' ');
   }
 }
 
