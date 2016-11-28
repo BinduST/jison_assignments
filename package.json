@@ -1,0 +1,30 @@
+{
+  "name": "jison_assignments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Number_node.js",
+  "directories": {
+    "test": ""
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "jison": "^0.4.17",
+    "number-to-words": "^1.2.3"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  },
+  "scripts": {
+    "test": "mocha --recursive test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BinduST/jison_assignments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BinduST/jison_assignments/issues"
+  },
+  "homepage": "https://github.com/BinduST/jison_assignments#readme"
+}

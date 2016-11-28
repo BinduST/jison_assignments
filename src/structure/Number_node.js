@@ -1,18 +1,23 @@
 "use strict"
 var converter = require('number-to-words');
 
-class NumberNode {
+class Number_node {
   constructor(symbol) {
     this.value = symbol;
     this.type = 'number';
   }
+
   evaluate() {
-    return this.value;
+    return Number(this.value);
   }
 
-  convertIntoWords(){
+  convertIntoWords() {
     return converter.toWords(this.value);
+  }
+
+  addParentheses() {
+    return this.value;
   }
 }
 
-module.exports = NumberNode;
+module.exports = Number_node;
