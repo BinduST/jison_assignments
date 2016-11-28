@@ -2,12 +2,12 @@ var Parser = require('jison').Parser;
 var fs = require('fs');
 var chai = require('chai');
 
-var grammar = fs.readFileSync('src/expressionEvaluator.jison', 'utf8');
+var grammar = fs.readFileSync('src/parseTreeBuilder.jison', 'utf8');
 var parser = new Parser(grammar);
 
 var assert = chai.assert;
 
-describe('Evaluator',() =>{
+describe('parseTreeBuilder',() =>{
     it('creates a parse tree for the expression "1+2"', ()=>{
         var res = parser.parse("1+2;");
         assert.ok(res);
