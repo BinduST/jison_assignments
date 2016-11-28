@@ -1,8 +1,3 @@
-//var Parser = require('jison').Parser;
-//var fs = require('fs');
-//
-//var grammar = fs.readFileSync('src/expressionEvaluator.jison', 'utf8');
-//var parser = new Parser(grammar);
 
 var evaluator = {};
 
